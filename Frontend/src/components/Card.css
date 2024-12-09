@@ -1,0 +1,12 @@
+.card-default {
+    width: 18rem;
+    padding: 0.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    font-size: 10rem;
+    color: rgb(157, 157, 253);
+    text-align: center;
+}

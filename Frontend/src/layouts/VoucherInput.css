@@ -1,0 +1,28 @@
+.divider {
+    background-color:aquamarine;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.v-inputfield {
+    display: flex;
+    justify-content: space-between;
+}
+
+.v-inputfield :focus {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-box {
+    border: 0px !important;
+    background-color: rgb(220, 232, 238);
+}
+
+.input-box:focus {
+    outline: none !important;
+    /* background-color: rgb(220, 232, 238); */
+}
