@@ -1,17 +1,13 @@
-import "./SalesVoucher.css"
-import VoucherInput from "./VoucherInput"
+import VoucherInput from "../forms/VoucherInput.jsx"
+import SalesInputForm from "../forms/SalesInputForm.jsx"
 
 export default function SalesVoucher() {
     return (
         <div className="voucher">
             <p>SalesVoucher</p>
-            <input type="text" />
-            <div>current bal</div>
-            <input type="text" />
-            <div>running bal</div>
             <div className="row row-4">
                 <div className="col">
-                   <VoucherInput/>
+                   <SalesInputForm/>
                 </div>
             </div>
         </div>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"></stop>
+      <stop offset="100%" stop-color="#14B8A6"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Pebble -->
+  <path d="M58 30
+       C30 38 18 68 24 104
+       C28 148 30 188 64 216
+       C96 240 160 238 194 214
+       C228 190 234 140 230 100
+       C226 60 206 28 168 22
+       C128 16 92 18 58 30Z" fill="url(#bg)"></path>
+
+  <!-- Connections -->
+  <g stroke="#fff" stroke-width="6" stroke-linecap="round">
+    <line x1="128" y1="78" x2="128" y2="104"></line>
+    <line x1="128" y1="152" x2="128" y2="178"></line>
+    <line x1="78" y1="128" x2="104" y2="128"></line>
+    <line x1="152" y1="128" x2="178" y2="128"></line>
+  </g>
+
+  <!-- Center -->
+  <circle cx="128" cy="128" r="18" fill="#fff"></circle>
+
+  <!-- Modules -->
+  <rect x="112" y="46" width="32" height="32" rx="8" fill="#fff"></rect>
+  <rect x="178" y="112" width="32" height="32" rx="8" fill="#fff"></rect>
+  <rect x="112" y="178" width="32" height="32" rx="8" fill="#fff"></rect>
+  <rect x="46" y="112" width="32" height="32" rx="8" fill="#fff"></rect>
+
+  <!-- Module Details -->
+  <g fill="#3B82F6">
+    <rect x="120" y="56" width="16" height="3" rx="1.5"></rect>
+    <rect x="120" y="63" width="12" height="3" rx="1.5"></rect>
+
+    <circle cx="194" cy="122" r="4"></circle>
+    <rect x="188" y="131" width="12" height="3" rx="1.5"></rect>
+
+    <rect x="120" y="188" width="16" height="3" rx="1.5"></rect>
+    <rect x="120" y="195" width="12" height="3" rx="1.5"></rect>
+
+    <rect x="56" y="120" width="12" height="12" rx="2"></rect>
+  </g>
+</svg>
