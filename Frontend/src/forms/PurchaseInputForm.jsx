@@ -77,7 +77,7 @@ export default function DemoPurchase() {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="container">
 
       <div className="card">
 
