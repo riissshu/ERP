@@ -78,12 +78,7 @@ export default function DemoPurchase() {
 
   return (
     <div className="container">
-
-      <div className="card">
-
-        <div className="card-header bg-success text-white">
-          <h3>Purchase Voucher</h3>
-        </div>
+      <h2 className="pb-2 pt-2">Purchase Voucher</h2>
 
         <div className="card-body">
 
@@ -263,10 +258,14 @@ export default function DemoPurchase() {
               </table>
 
               <button
-                className="btn btn-success"
+                className="btn"
+                 style={{
+                    background: "green",
+                    color: "#fff",
+                  }}
                 onClick={saveVoucher}
               >
-                Save Purchase Voucher
+                Save Voucher
               </button>
 
             </div>
@@ -274,9 +273,7 @@ export default function DemoPurchase() {
           </div>
 
         </div>
-
+      
       </div>
-
-    </div>
   );
 }

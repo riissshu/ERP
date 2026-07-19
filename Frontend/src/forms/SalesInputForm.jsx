@@ -41,7 +41,7 @@ const demo = () => {
       ...items,
       {
         product: "",
-        qty: 1,
+        qty: 0,
         rate: 0,
         amount: 0,
       },
@@ -73,37 +73,36 @@ const demo = () => {
   };
 
   return (
-    <div style={{ padding: 20, maxWidth: 1000, margin: "auto" }}>
-      <h2>Sales Voucher Entry</h2>
+    <div>
+      <h2>Sales Voucher</h2>
+      <div className="row mb-3">
 
-      <div style={{ display: "flex", gap: 20, marginBottom: 20 }}>
-        <div>
-          <label>Gatepass No</label>
-          <br />
+        <div className="col-md-2">
+          <label>Voucher No</label>
           <input
-            type="text"
             name="invoiceNo"
+            className="form-control"
             value={voucher.invoiceNo}
             onChange={handleVoucherChange}
           />
         </div>
 
-        <div>
+        <div className="col-md-2">
           <label>Date</label>
-          <br />
           <input
             type="date"
+            className="form-control"
             name="date"
             value={voucher.date}
             onChange={handleVoucherChange}
           />
         </div>
 
-        <div>
+        <div className="col-md-2">
           <label>Customer</label>
-          <br />
           <input
             type="text"
+            className="form-control"
             name="customer"
             value={voucher.customer}
             onChange={handleVoucherChange}
@@ -163,7 +162,10 @@ const demo = () => {
               <td>{item.amount.toFixed(2)}</td>
 
               <td>
-                <button onClick={() => removeRow(index)}>
+                <button 
+                  onClick={() => removeRow(index)}
+                  className="btn btn-danger btn-sm"
+                >
                   Delete
                 </button>
               </td>
@@ -174,26 +176,44 @@ const demo = () => {
 
       <br />
 
-      <button onClick={addRow}>Add Item</button>
+      <button className="btn btn-primary btn-sm" onClick={addRow}>
+          Add Item
+      </button>
 
       <hr />
+      
+      <div className="row">
+        
+        <div className="col-md-6">
 
-      <div style={{ textAlign: "right" }}>
-        <h3>Subtotal : ₹ {subtotal.toFixed(2)}</h3>
+              <label>Narration</label>
+
+              <textarea
+                className="form-control"
+                rows="4"
+                name="narration"
+                value={voucher.narration}
+                onChange={handleVoucherChange}
+              />
+        </div> 
+        
+        <div className="col-md-6 pt-4" >
+            <h3 style={{ textAlign: "center"}}>Subtotal : ₹ {subtotal.toFixed(2)}</h3>
+        </div>
+        
       </div>
 
       <button
+        className="btn mt-4"
+          style={{
+            background: "green",
+            color: "#fff",
+          }}
         onClick={saveVoucher}
-        style={{
-          padding: "10px 20px",
-          background: "green",
-          color: "#fff",
-          border: 0,
-          cursor: "pointer",
-        }}
       >
         Save Voucher
       </button>
+
     </div>
   );
 };
