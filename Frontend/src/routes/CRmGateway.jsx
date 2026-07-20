@@ -3,7 +3,7 @@ import DisplayLayout from "../layouts/DisplayLayout.jsx"
 function CRmGateway() {
   return (
         <DisplayLayout>
-            <div>Hello Wordl</div>
+            <div>Hello World</div>
         </DisplayLayout>
   )
 }
