@@ -202,9 +202,10 @@ const demo = () => {
         </div>
         
       </div>
-
+      
+      
       <button
-        className="btn mt-4"
+        className="btn mt-4 mb-4"
           style={{
             background: "green",
             color: "#fff",
