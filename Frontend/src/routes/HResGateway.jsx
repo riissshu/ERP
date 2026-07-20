@@ -1,9 +1,10 @@
 import DisplayLayout from "../layouts/DisplayLayout.jsx"
+import AttendanceVoucher from "../layouts/AttendanceVoucher.jsx"
 
 function HResGateway() {
   return (
     <DisplayLayout>
-            <div>Hello Wordl</div>
+            <AttendanceVoucher/>
        </DisplayLayout>
   )
 }

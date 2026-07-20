@@ -15,7 +15,7 @@ const products = [
 
 export default function DemoOrder() {
   const [voucher, setVoucher] = useState({
-    orderNo: "OD-0001",
+    orderNo: "OV-0001",
     date: new Date().toISOString().substring(0, 10),
     customer: "",
     transporter: "",
