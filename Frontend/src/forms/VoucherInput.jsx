@@ -2,9 +2,9 @@ import "./VoucherInput.css"
 
 function VoucherInput() {
   return (
-    <div className="box">
-      <h2>Daily Report</h2>
-    </div>
+    <section className="container-xxl box">
+      <h2>ATTENDANCE SHEET</h2>
+    </section>
   )
 }
 
