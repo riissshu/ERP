@@ -1,9 +1,10 @@
 import DisplayLayout from "../layouts/DisplayLayout.jsx"
+import PaymentVoucher from "../layouts/PaymentVoucher.jsx"
 
 function FinanceGateway() {
   return (
     <DisplayLayout>
-        <div>Hello World</div>
+        <PaymentVoucher/>
     </DisplayLayout>
   )
 }
