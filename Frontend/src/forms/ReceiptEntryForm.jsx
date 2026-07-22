@@ -10,9 +10,9 @@ const debitLedgers = [
   "XYZ Suppliers",
 ];
 
-export default function PaymentEntryForm() {
+export default function ReceiptEntryForm() {
 
-  const [voucherNo, setVoucherNo] = useState("PA-0001");
+  const [voucherNo, setVoucherNo] = useState("RV-0001");
 
   const [date, setDate] = useState(
     new Date().toISOString().split("T")[0]
@@ -74,7 +74,7 @@ export default function PaymentEntryForm() {
   return (
     <div className="container">
 
-          <h2 className="pb-2 pt-2">Payment Voucher</h2>
+          <h2 className="pb-2 pt-2">Receipt Voucher</h2>
 
         <div className="card-body">
 
@@ -91,7 +91,7 @@ export default function PaymentEntryForm() {
                     value={voucherNo}
                     onChange={(e) => setVoucherNo(e.target.value)}
                 />
-                
+
             </div>
 
             <div className="col-md-3">
@@ -271,3 +271,15 @@ export default function PaymentEntryForm() {
       </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
