@@ -236,14 +236,15 @@ export default function ReceiptEntryForm() {
 
           {/* Narration */}
 
-          <div className="mb-4">
+
+          <div>
 
             <label className="fw-bold">
               Narration
             </label>
 
             <textarea
-              rows="3"
+              rows="1"
               className="form-control"
               value={narration}
               onChange={(e) =>
@@ -251,14 +252,9 @@ export default function ReceiptEntryForm() {
               }
             />
 
-          </div>
 
-          {/* Footer */}
-
-          <div className="d-flex justify-content-between">
-
-            <button
-                className="btn btn-success"
+             <button
+                className="btn btn-success mt-4"
                 onClick={handleSave}
             >
                 Save (Ctrl + S)
