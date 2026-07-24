@@ -10,14 +10,35 @@ export default function StockItemCreation() {
     openingQty: "",
     openingRate: "",
     openingValue: "",
+
+    altQty: "",
+    baseQty: "",
+
   });
 
-  const handleChange = (e) => {
-    setItem({
-      ...item,
-      [e.target.name]: e.target.value,
-    });
+ const handleChange = (e) => {
+  const { name, value } = e.target;
+
+  const updatedItem = {
+    ...item,
+    [name]: value,
   };
+
+  const qty =
+    name === "openingQty"
+      ? Number(value)
+      : Number(updatedItem.openingQty);
+
+  const rate =
+    name === "openingRate"
+      ? Number(value)
+      : Number(updatedItem.openingRate);
+
+  updatedItem.openingValue =
+    qty && rate ? (qty * rate).toFixed(2) : "";
+
+  setItem(updatedItem);
+};
 
   const handleSave = () => {
     console.log(item);
@@ -85,6 +106,7 @@ export default function StockItemCreation() {
                 <option>Primary</option>
                 <option>Finished Goods</option>
                 <option>Raw Material</option>
+                <option>Packaging Material</option>
               </select>
             </div>
           </div>
@@ -123,6 +145,7 @@ export default function StockItemCreation() {
                 value={item.alternateUnit}
                 onChange={handleChange}
               >
+                <option>Not Applicable</option>
                 <option>Pcs</option>
                 <option>Kgs</option>
                 <option>Gram</option>
@@ -177,6 +200,7 @@ export default function StockItemCreation() {
         <div className="col-md-2">
           Quantity
           <input
+            type="number"
             className="form-control form-control-sm"
             style={{ width: 200 }}
             name="openingQty"
@@ -190,6 +214,7 @@ export default function StockItemCreation() {
         <div className="col-md-3">
           Rate
           <input
+            type="number"
             className="form-control form-control-sm"
             style={{ width: 200 }}
             name="openingRate"
@@ -201,6 +226,7 @@ export default function StockItemCreation() {
         <div className="col-md-3">
           Value
           <input
+            type="number"
             className="form-control form-control-sm"
             style={{ width: 200 }}
             name="openingValue"
