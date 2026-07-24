@@ -1,9 +1,9 @@
-
+import StockItemCreation from "../forms/StockItemCreation"
 
 export default function InventoryVoucher() {
     return (
-        <div>
-            Hello World 
+        <div className="row">
+            <StockItemCreation/>
         </div>
     )
 

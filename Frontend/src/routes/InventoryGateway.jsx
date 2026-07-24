@@ -4,7 +4,7 @@ import InventoryVoucher from "../layouts/InventoryVoucher.jsx"
 function InventoryGateway() {
   return (
     <DisplayLayout>
-           <div>Hello World</div>
+           <InventoryVoucher/>
        </DisplayLayout>
   )
 }
