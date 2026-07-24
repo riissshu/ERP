@@ -254,6 +254,10 @@ export default function PaymentEntryForm() {
              <button
                 className="btn btn-success mt-4"
                 onClick={handleSave}
+                style={{
+            background: "green",
+            color: "#fff",
+          }}
             >
                 Save (Ctrl + S)
             </button>

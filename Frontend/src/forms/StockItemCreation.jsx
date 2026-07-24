@@ -13,32 +13,26 @@ export default function StockItemCreation() {
 
     altQty: "",
     baseQty: "",
-
   });
 
- const handleChange = (e) => {
-  const { name, value } = e.target;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
-  const updatedItem = {
-    ...item,
-    [name]: value,
+    const updatedItem = {
+      ...item,
+      [name]: value,
+    };
+
+    const qty =
+      name === "openingQty" ? Number(value) : Number(updatedItem.openingQty);
+
+    const rate =
+      name === "openingRate" ? Number(value) : Number(updatedItem.openingRate);
+
+    updatedItem.openingValue = qty && rate ? (qty * rate).toFixed(2) : "";
+
+    setItem(updatedItem);
   };
-
-  const qty =
-    name === "openingQty"
-      ? Number(value)
-      : Number(updatedItem.openingQty);
-
-  const rate =
-    name === "openingRate"
-      ? Number(value)
-      : Number(updatedItem.openingRate);
-
-  updatedItem.openingValue =
-    qty && rate ? (qty * rate).toFixed(2) : "";
-
-  setItem(updatedItem);
-};
 
   const handleSave = () => {
     console.log(item);
@@ -237,25 +231,24 @@ export default function StockItemCreation() {
       </div>
 
       <div>
-          <button
-            type="button"
-            className="btn btn-success mx-2 mt-4"
-            style={{ width: 100 }}
-            onClick={handleSave}
-            >
-            Save
-          </button>
+        <button
+          type="button"
+          className="btn btn-success mx-2 mt-4"
+          style={{ width: 100 }}
+          onClick={handleSave}
+        >
+          Save
+        </button>
 
-          <button
-            type="button"
-            className="btn btn-danger mx-2 mt-4"
-            style={{ width: 100 }}
-            onClick={() => window.history.back()}
-            >
-            Cancel
-          </button>
-      </div> 
-      
+        <button
+          type="button"
+          className="btn btn-danger mx-2 mt-4"
+          style={{ width: 100 }}
+          onClick={() => window.history.back()}
+        >
+          Cancel
+        </button>
+      </div>
     </div>
   );
 }
