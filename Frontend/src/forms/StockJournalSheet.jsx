@@ -373,7 +373,7 @@ export default function StockJournalSheet() {
               </tbody>
 
               <tfoot>
-                <tr className="table-secondary fw-semibold">
+                <tr className="table-light fw-semibold">
                   <td>Total</td>
                   <td className="text-end">{sourceQty}</td>
                   <td />
@@ -385,10 +385,10 @@ export default function StockJournalSheet() {
                   <td className="text-center">
                     <button
                       type="button"
-                      className="btn btn-sm btn-primary"
+                      className="btn btn-sm btn-outline-success"
                       onClick={addRow}
                     >
-                      + Row
+                      +
                     </button>
                   </td>
 
