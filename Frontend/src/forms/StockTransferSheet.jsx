@@ -218,11 +218,9 @@ export default function StockJournalVoucher() {
   };
 
   return (
-    <div className="container-fluid py-4">
-      <div className="card shadow">
-        <div className="card-header bg-primary text-white">
-          <h4 className="mb-0">Stock Journal Voucher</h4>
-        </div>
+    <div className="container">
+        
+          <h2 className="pb-2 pt-2">Stock Journal Voucher</h2>
 
         <div className="card-body">
           {/* Header */}
@@ -295,7 +293,6 @@ export default function StockJournalVoucher() {
             </button>
           </div>
         </div>
-      </div>
     </div>
   );
 }
