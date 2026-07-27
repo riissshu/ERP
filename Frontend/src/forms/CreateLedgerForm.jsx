@@ -54,23 +54,22 @@ export default function CreateLedgerForm() {
   const [ledger, setLedger] = useState({
     name: "",
     alias: "",
-    under: "Sundry Debtors",
+    under: "Primary",
 
     address1: "",
     address2: "",
     state: "Bihar",
     country: "India",
-    pincode: "",
+    pincode: undefined,
 
     contactPerson: "",
-    mobile: "",
-    phone: "",
+    mobile: undefined,
     email: "",
 
-    openingBalance: "",
+    openingBalance: undefined,
     balanceType: "Dr",
-    creditPeriod: "",
-    creditLimit: "",
+    creditPeriod: undefined,
+    creditLimit: undefined,
   });
 
   const handleChange = (e) => {
@@ -94,28 +93,20 @@ export default function CreateLedgerForm() {
   ledger.under === "Sundry Creditors";
 
   return (
-    <div className="container-fluid tally-container">
-      {/* HEADER */}
-
-      <div className="tally-header">
-        <div className="row align-items-center">
-          <div className="col">
-            <h5 className="m-0">Ledger Creation</h5>
-          </div>
-        </div>
-      </div>
-
+    <div className="container-fluid">
+      
+            <h2 className="pb-2 pt-2">Ledger Creation</h2>
+         
       {/* BASIC DETAILS */}
 
-      <div className="tally-section">Basic Details</div>
+      <div className="fw-bold">Basic Details</div>
 
-      <div className="tally-body">
         <div className="row mb-2 align-items-center">
-          <label className="col-md-3 tally-label">Name</label>
+          <label className="col-md-3">Name</label>
 
           <div className="col-md-9">
             <input
-              className="form-control tally-input"
+              className="form-control"
               name="name"
               value={ledger.name}
               onChange={handleChange}
@@ -124,11 +115,11 @@ export default function CreateLedgerForm() {
         </div>
 
         <div className="row mb-2 align-items-center">
-          <label className="col-md-3 tally-label">Alias</label>
+          <label className="col-md-3">Alias</label>
 
           <div className="col-md-9">
             <input
-              className="form-control tally-input"
+              className="form-control"
               name="alias"
               value={ledger.alias}
               onChange={handleChange}
@@ -137,11 +128,11 @@ export default function CreateLedgerForm() {
         </div>
 
         <div className="row mb-2 align-items-center">
-          <label className="col-md-3 tally-label">Under</label>
+          <label className="col-md-3">Under</label>
 
           <div className="col-md-9">
             <select
-              className="form-select tally-input"
+              className="form-select"
               name="under"
               value={ledger.under}
               onChange={handleChange}
@@ -152,26 +143,25 @@ export default function CreateLedgerForm() {
             </select>
           </div>
         </div>
-      </div>
+      
 
       {/* MAILING DETAILS */}
 
-      <div className="tally-section">Mailing Details</div>
+      <div className="fw-bold">Mailing Details</div>
 
-      <div className="tally-body">
         <div className="row mb-2 align-items-center">
-          <label className="col-md-3 tally-label">Address</label>
+          <label className="col-md-3">Address</label>
 
           <div className="col-md-9">
             <input
-              className="form-control tally-input mb-2"
+              className="form-control mb-1"
               name="address1"
               value={ledger.address1}
               onChange={handleChange}
             />
 
             <input
-              className="form-control tally-input"
+              className="form-control"
               name="address2"
               value={ledger.address2}
               onChange={handleChange}
@@ -180,11 +170,11 @@ export default function CreateLedgerForm() {
         </div>
 
         <div className="row mb-2 align-items-center">
-          <label className="col-md-3 tally-label">State</label>
+          <label className="col-md-3">State</label>
 
           <div className="col-md-4">
             <select
-              className="form-select tally-input"
+              className="form-select"
               name="state"
               value={ledger.state}
               onChange={handleChange}
@@ -195,44 +185,46 @@ export default function CreateLedgerForm() {
             </select>
           </div>
 
-          <label className="col-md-2 tally-label">Country</label>
+          <label className="col-md-2">Country</label>
 
           <div className="col-md-3">
-            <input
-              className="form-control tally-input"
+            <select
+              className="form-select"
               name="country"
               value={ledger.country}
               onChange={handleChange}
-            />
+            >
+              <option>India</option>
+            </select>
           </div>
         </div>
 
         <div className="row mb-3 align-items-center">
-          <label className="col-md-3 tally-label">Pincode</label>
+          <label className="col-md-3">Pincode</label>
 
           <div className="col-md-3">
             <input
-              className="form-control tally-input"
+              className="form-control"
               name="pincode"
+              type="number"
               value={ledger.pincode}
               onChange={handleChange}
             />
           </div>
         </div>
-      </div>
+      
 
       {/* CONTACT DETAILS */}
 
-      <div className="tally-section">Contact Details</div>
+      <div className="fw-bold">Contact Details</div>
 
-      <div className="tally-body">
         <div className="row mb-2 align-items-center">
-          <label className="col-md-3 tally-label">Contact Person</label>
+          <label className="col-md-3">Contact Person</label>
 
           <div className="col-md-9">
             <input
               type="text"
-              className="form-control tally-input"
+              className="form-control"
               name="contactPerson"
               value={ledger.contactPerson}
               onChange={handleChange}
@@ -241,12 +233,12 @@ export default function CreateLedgerForm() {
         </div>
 
         <div className="row mb-2">
-          <label className="col-md-3 tally-label">Mobile</label>
+          <label className="col-md-3">Mobile</label>
 
           <div className="col-md-3">
             <input
-              type="text"
-              className="form-control tally-input"
+              type="number"
+              className="form-control"
               name="mobile"
               value={ledger.mobile}
               onChange={handleChange}
@@ -255,32 +247,31 @@ export default function CreateLedgerForm() {
         </div>
 
         <div className="row mb-3">
-          <label className="col-md-3 tally-label">Email</label>
+          <label className="col-md-3">Email</label>
 
           <div className="col-md-9">
             <input
               type="email"
-              className="form-control tally-input"
+              className="form-control"
               name="email"
               value={ledger.email}
               onChange={handleChange}
             />
           </div>
         </div>
-      </div>
+      
 
       {/* ACCOUNTING DETAILS */}
 
-      <div className="tally-section">Accounting Details</div>
+      <div className="fw-bold">Accounting Details</div>
 
-      <div className="tally-body">
         <div className="row mb-3">
-          <label className="col-md-3 tally-label">Opening Balance</label>
+          <label className="col-md-3">Opening Balance</label>
 
           <div className="col-md-3">
             <input
               type="number"
-              className="form-control tally-input"
+              className="form-control"
               name="openingBalance"
               value={ledger.openingBalance}
               onChange={handleChange}
@@ -289,7 +280,7 @@ export default function CreateLedgerForm() {
 
           <div className="col-md-2">
             <select
-              className="form-select tally-input"
+              className="form-select"
               name="balanceType"
               value={ledger.balanceType}
               onChange={handleChange}
@@ -306,12 +297,12 @@ export default function CreateLedgerForm() {
         
         <>
         <div className="row mb-3">
-          <label className="col-md-3 tally-label">Credit Period</label>
+          <label className="col-md-3">Credit Period</label>
 
           <div className="col-md-3">
             <input
               type="number"
-              className="form-control tally-input"
+              className="form-control"
               name="creditPeriod"
               value={ledger.creditPeriod}
               onChange={handleChange}
@@ -322,12 +313,12 @@ export default function CreateLedgerForm() {
         </div>
 
         <div className="row mb-3">
-          <label className="col-md-3 tally-label">Credit Limit</label>
+          <label className="col-md-3">Credit Limit</label>
 
           <div className="col-md-3">
             <input
               type="number"
-              className="form-control tally-input"
+              className="form-control"
               name="creditLimit"
               value={ledger.creditLimit}
               onChange={handleChange}
@@ -339,24 +330,18 @@ export default function CreateLedgerForm() {
         </>
         )}
 
-      </div>
-
-      {/* FOOTER */}
-
-      <div className="tally-footer">
-        <div className="d-flex justify-content-end gap-2 align-items-center flex-wrap">
+        <div className="row mb-5 me-5 justify-content-end gap-2">
           <button
-            className="btn btn-secondary btn-sm me-2"
+            className="btn btn-secondary col-auto"
             onClick={handleReset}
           >
             Reset
           </button>
 
-          <button className="btn btn-primary btn-sm" onClick={handleSave}>
+          <button className="btn btn-primary col-auto me-5" onClick={handleSave}>
             Save Ledger
           </button>
         </div>
-      </div>
     </div>
   );
 }
