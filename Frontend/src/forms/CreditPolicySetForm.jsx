@@ -8,19 +8,19 @@ export default function CreditPolicySetForm() {
   const partyType = ["A", "B", "C"];
 
   const creditPolicies = {
-  A: {
-    limit: 500000,
-    days: 30,
-  },
-  B: {
-    limit: 200000,
-    days: 15,
-  },
-  C: {
-    limit: "",
-    days: 0,
-  },
-};
+    A: {
+      limit: 500000,
+      days: 30,
+    },
+    B: {
+      limit: 200000,
+      days: 15,
+    },
+    C: {
+      limit: "",
+      days: 0,
+    },
+  };
 
   const [ledgers, setLedgers] = useState([
     {
@@ -29,7 +29,7 @@ export default function CreditPolicySetForm() {
       group: "Sundry Creditors",
       creditLimit: "",
       creditPeriod: "",
-      checkDays: true,
+      checkDays: false,
       partyType: "",
     },
     {
@@ -56,7 +56,7 @@ export default function CreditPolicySetForm() {
       group: "Sundry Debtors",
       creditLimit: "",
       creditPeriod: "",
-      checkDays: true,
+      checkDays: false,
       partyType: "",
     },
     {
@@ -74,7 +74,7 @@ export default function CreditPolicySetForm() {
       group: "Sundry Creditors",
       creditLimit: "",
       creditPeriod: "",
-      checkDays: true,
+      checkDays: false,
       partyType: "",
     },
   ]);
@@ -83,29 +83,29 @@ export default function CreditPolicySetForm() {
 
   // Fixed: update by id instead of positional index, and avoid mutating state directly
   const handleChange = (id, field, value) => {
-  setLedgers((prev) =>
-    prev.map((ledger) => {
-      if (ledger.id !== id) return ledger;
+    setLedgers((prev) =>
+      prev.map((ledger) => {
+        if (ledger.id !== id) return ledger;
 
-      // When Credit Policy changes
-      if (field === "partyType") {
-        const policy = creditPolicies[value];
+        // When Credit Policy changes
+        if (field === "partyType") {
+          const policy = creditPolicies[value];
+
+          return {
+            ...ledger,
+            partyType: value,
+            creditLimit: policy?.limit ?? "",
+            creditPeriod: policy?.days ?? "",
+          };
+        }
 
         return {
           ...ledger,
-          partyType: value,
-          creditLimit: policy?.limit ?? "",
-          creditPeriod: policy?.days ?? "",
+          [field]: value,
         };
-      }
-
-      return {
-        ...ledger,
-        [field]: value,
-      };
-    })
-  );
-};
+      }),
+    );
+  };
 
   // Fixed: "Under Group" selector now actually scopes the ledger list
   const filtered = ledgers
@@ -113,18 +113,14 @@ export default function CreditPolicySetForm() {
     .filter((x) => x.name.toLowerCase().includes(search.toLowerCase()));
 
   return (
-    <div className="container-fluid mt-3">
-      <div className="border">
-        {/* Header */}
+    <div className="container-fluid">
 
-        <div className="bg-primary text-white px-3 py-2 d-flex justify-content-between">
-          <strong>Multi Ledger Credit Limit</strong>
-        </div>
-
+          <h2 className="pb-2 pt-2">Set Credit Limit</h2>
+        
         {/* Info */}
 
-        <div className="row px-3 py-2 border-bottom">
-          <div className="col-md-4 d-flex align-items-center">
+        <div className="row px-3 py-4">
+          <div className="col-md-8 d-flex align-items-center">
             <label className="fw-bold me-2 mb-0">Under Group :</label>
 
             <select
@@ -153,12 +149,6 @@ export default function CreditPolicySetForm() {
 
         {/* Table */}
 
-        <div
-          style={{
-            maxHeight: "520px",
-            overflowY: "auto",
-          }}
-        >
           <table className="table table-bordered table-hover table-sm align-middle mb-0">
             <thead
               className="table-light"
@@ -198,7 +188,7 @@ export default function CreditPolicySetForm() {
                         handleChange(ledger.id, "partyType", e.target.value)
                       }
                     >
-                        <option value="">Select</option>
+                      <option value="">Select</option>
 
                       {partyType.map((cat) => (
                         <option key={cat} value={cat}>
@@ -243,20 +233,20 @@ export default function CreditPolicySetForm() {
               ))}
             </tbody>
           </table>
-        </div>
+        
 
         {/* Footer */}
 
-        <div className="border-top p-2 d-flex justify-content-between">
+        <div className=" p-4 d-flex justify-content-end">
           <div>
-            <button className="btn btn-secondary btn-sm me-2">Cancel</button>
+            <button className="btn btn-secondary mt-4 me-2">Cancel</button>
           </div>
 
           <div>
-            <button className="btn btn-success btn-sm">Save All</button>
+            <button className="btn btn-success mt-4">Save All</button>
           </div>
         </div>
-      </div>
+      
     </div>
   );
 }
