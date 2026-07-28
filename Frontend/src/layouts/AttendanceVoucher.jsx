@@ -1,11 +1,9 @@
-// import AttendanceSheet from "../forms/AttendanceSheet.jsx"
-import AddEmployeeForm from "../forms/AddEmployeeForm.jsx"
+import AttendanceSheet from "../forms/AttendanceSheet.jsx"
 
 export default function InventoryVoucher() {
     return (
         <div className="row">
-            {/* <AttendanceSheet/> */}
-            <AddEmployeeForm/>
+            <AttendanceSheet/>
         </div>
     )
 
