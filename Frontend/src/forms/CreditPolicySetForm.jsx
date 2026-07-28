@@ -7,6 +7,21 @@ export default function CreditPolicySetForm() {
 
   const partyType = ["A", "B", "C"];
 
+  const creditPolicies = {
+  A: {
+    limit: 500000,
+    days: 30,
+  },
+  B: {
+    limit: 200000,
+    days: 15,
+  },
+  C: {
+    limit: "",
+    days: 0,
+  },
+};
+
   const [ledgers, setLedgers] = useState([
     {
       id: 1,
@@ -68,12 +83,29 @@ export default function CreditPolicySetForm() {
 
   // Fixed: update by id instead of positional index, and avoid mutating state directly
   const handleChange = (id, field, value) => {
-    setLedgers((prev) =>
-      prev.map((ledger) =>
-        ledger.id === id ? { ...ledger, [field]: value } : ledger,
-      ),
-    );
-  };
+  setLedgers((prev) =>
+    prev.map((ledger) => {
+      if (ledger.id !== id) return ledger;
+
+      // When Credit Policy changes
+      if (field === "partyType") {
+        const policy = creditPolicies[value];
+
+        return {
+          ...ledger,
+          partyType: value,
+          creditLimit: policy?.limit ?? "",
+          creditPeriod: policy?.days ?? "",
+        };
+      }
+
+      return {
+        ...ledger,
+        [field]: value,
+      };
+    })
+  );
+};
 
   // Fixed: "Under Group" selector now actually scopes the ledger list
   const filtered = ledgers
@@ -166,6 +198,8 @@ export default function CreditPolicySetForm() {
                         handleChange(ledger.id, "partyType", e.target.value)
                       }
                     >
+                        <option value="">Select</option>
+
                       {partyType.map((cat) => (
                         <option key={cat} value={cat}>
                           {cat}
