@@ -1,11 +1,11 @@
-import StockTransferSheet from "../forms/StockTransferSheet.jsx"
-// import StockJournalSheet from "../forms/StockJournalSheet.jsx"
+// import StockTransferSheet from "../forms/StockTransferSheet.jsx"
+import StockJournalSheetX from "../forms/StockJournalSheetX.jsx"
 
 export default function StockJournalVoucher() {
   return (
     <div className="row">
-      <StockTransferSheet/>
-      {/* <StockJournalSheet/> */}
+      {/* <StockTransferSheet/> */}
+      <StockJournalSheetX/>
     </div>
   )
 }
