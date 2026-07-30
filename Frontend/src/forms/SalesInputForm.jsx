@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const demo = () => {
+const SalesInputForm = () => {
   const [voucher, setVoucher] = useState({
     invoiceNo: "",
     customer: "",
@@ -219,4 +219,4 @@ const demo = () => {
   );
 };
 
-export default demo;
+export default SalesInputForm;
