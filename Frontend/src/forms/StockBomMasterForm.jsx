@@ -82,12 +82,10 @@ export default function BOMForm() {
   };
 
   return (
-    <div className="container mt-4">
-      <div className="card shadow-sm">
-        <div className="card-header bg-primary text-white">
-          <h5 className="mb-0">Bill of Material (BOM)</h5>
-        </div>
-
+    <div className="container">
+      
+          <h2 className="pt-2 pb-2">Bill of Material (BOM)</h2>
+       
         <div className="card-body">
           {/* Finished Product */}
           <div className="row mb-4">
@@ -220,7 +218,7 @@ export default function BOMForm() {
           </button>
 
           {/* Footer Buttons */}
-          <div className="d-flex justify-content-end gap-2">
+          <div className="d-flex justify-content-end gap-2 mb-4 me-5">
             <button className="btn btn-success" onClick={handleSave}>
               Save
             </button>
@@ -233,7 +231,7 @@ export default function BOMForm() {
             </button>
           </div>
         </div>
-      </div>
+      
     </div>
   );
 }
