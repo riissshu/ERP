@@ -67,8 +67,6 @@ export default function PurchaseReturnForm() {
   return sum + (gross);
 }, 0);
 
-const netAmount = totalAmount;
-
   const saveVoucher = () => {
     const data = {
       voucherNo,

@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function ProductionEntryForm() {
-  // Sample BOM Data
-  const bomList = [
+const bomList = [
     {
       code: "BOM001",
       finishedItem: "Biscuit Box",
@@ -27,6 +25,9 @@ export default function ProductionEntryForm() {
       ],
     },
   ];
+
+export default function ProductionEntryForm() {
+  
 
   const [voucherNo, setVoucherNo] = useState("PRO000001");
 
@@ -77,7 +78,6 @@ export default function ProductionEntryForm() {
   }, [selectedBOM]);
 
   useEffect(() => {
-    if (!rows.length) return;
 
     // If Production Qty is blank or zero, reset quantities
     if (!productionQty || Number(productionQty) <= 0) {

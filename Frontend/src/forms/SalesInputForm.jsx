@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const SalesInputForm = () => {
   const [voucher, setVoucher] = useState({
@@ -65,7 +65,6 @@ const SalesInputForm = () => {
       ...voucher,
       items,
       subtotal,
-      gst
     };
 
     console.log(data);

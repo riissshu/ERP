@@ -1,10 +1,9 @@
-import React from 'react'
 import Layouts from './Layouts'
 
 function DisplayLayout({children}) {
   return (
     <>
-        <Layouts></Layouts>
+        <Layouts />
         <div>{children}</div>
     </> 
   );
