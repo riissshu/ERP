@@ -11,23 +11,23 @@ export default function PhysicalStockVerification() {
     {
       item: "Cement",
       bookQty: 100,
-      physicalQty: 100,
-      shortage: 0,
-      surplus: 0,
+      physicalQty: undefined,
+      shortage: undefined,
+      surplus: undefined,
     },
     {
       item: "Steel",
       bookQty: 250,
-      physicalQty: 250,
-      shortage: 0,
-      surplus: 0,
+      physicalQty: undefined,
+      shortage: undefined,
+      surplus: undefined,
     },
     {
       item: "Bricks",
       bookQty: 500,
-      physicalQty: 500,
-      shortage: 0,
-      surplus: 0,
+      physicalQty: undefined,
+      shortage: undefined,
+      surplus: undefined,
     },
   ]);
 
@@ -79,12 +79,10 @@ export default function PhysicalStockVerification() {
   };
 
   return (
-    <div className="container mt-4">
-      <div className="card shadow-sm">
-        <div className="card-header bg-primary text-white">
-          <h5 className="mb-0">Physical Stock Maintenance</h5>
-        </div>
+    <div className="container">
 
+          <h2 className="pt-2 pb-2">Physical Stock Verification</h2>
+        
         <div className="card-body">
           <div className="row mb-3">
             <div className="col-md-3">
@@ -195,13 +193,13 @@ export default function PhysicalStockVerification() {
             </button>
           </div>
 
-          <div className="text-end">
+          <div className="text-end me-5">
             <button className="btn btn-success" onClick={handleSave}>
               Save
             </button>
           </div>
         </div>
-      </div>
+      
     </div>
   );
 }

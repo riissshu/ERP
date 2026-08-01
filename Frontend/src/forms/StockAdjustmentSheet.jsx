@@ -42,7 +42,7 @@ export default function StockAdjustmentSheet() {
       ...rows,
       {
         item: "",
-        type: "Damage",
+        type: "Other",
         qty: "",
         reason: "",
         remarks: "",
@@ -65,11 +65,9 @@ export default function StockAdjustmentSheet() {
   };
 
   return (
-    <div className="container-fluid mt-3">
-      <div className="card shadow-sm">
-        <div className="card-header bg-primary text-white">
-          <h5 className="mb-0">Stock Adjustment Voucher</h5>
-        </div>
+    <div className="container-fluid">
+     
+          <h2 className="pt-2 pb-2">Stock Adjustment Voucher</h2>   
 
         <div className="card-body">
           <div className="row mb-3">
@@ -215,7 +213,7 @@ export default function StockAdjustmentSheet() {
             </div>
           </div>
         </div>
-      </div>
+      
     </div>
   );
 }
